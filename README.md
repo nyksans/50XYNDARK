@@ -4,6 +4,10 @@
 
 ## Tech Stack
 
+### GEN AI
+
+- GOOGLE GEMINI API
+  
 ### Frontend
 
 - React
