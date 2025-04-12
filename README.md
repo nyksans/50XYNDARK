@@ -49,6 +49,12 @@ npm run dev
 bun dev
 ```
 
+.![Screenshot 2025-04-12 083710](https://github.com/user-attachments/assets/a3131e7a-dad2-4b83-b449-fb116799718b)
+![Screenshot 2025-04-12 083734](https://github.com/user-attachments/assets/bd09091d-af87-4262-87c1-32d0356181eb)
+![Screenshot 2025-04-12 084637](https://github.com/user-attachments/assets/4d62b535-a07d-4ac7-a045-89cfa3506d73)
+![Screenshot 2025-04-12 084725](https://github.com/user-attachments/assets/77fc2e77-1209-471e-aefa-522157cbceda)
+
+
 The application will be available at `http://localhost:5173`
 
 ### Backend Setup
@@ -59,7 +65,10 @@ pip install -r requirements.txt
 python main.py
 ```
 
+![WhatsApp Image 2025-04-12 at 09 04 10_730ca5fe](https://github.com/user-attachments/assets/4b9367a9-96cf-46bc-bc2a-8a2f6b5d6f3b)
+
 ## Project Structure
+
 
 ```
 ├── src/                # Frontend source code
