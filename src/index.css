@@ -1,0 +1,149 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 30% 99%;
+    --foreground: 260 25% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 25% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 25% 11%;
+
+    --primary: 262 47% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 195 84% 49%;
+    --secondary-foreground: 260 25% 11%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 262 35% 92%;
+    --accent-foreground: 262 47% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262 47% 55%;
+    
+    --radius: 0.5rem;
+    
+    --purple-light: 272 88% 93%;
+    --purple-dark: 228 20% 14%;
+    --blue-light: 214 92% 91%;
+    --blue-dark: 210 54% 22%;
+  }
+
+  .dark {
+    --background: 260 25% 11%;
+    --foreground: 213 31% 91%;
+
+    --card: 260 25% 13%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 260 25% 11%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 262 47% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 195 84% 49%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 262 25% 16%;
+    --accent-foreground: 262 47% 55%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 20% 20%;
+    --input: 260 20% 20%;
+    --ring: 262 47% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-xl shadow-lg;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-purple-500/10 to-blue-500/10 dark:from-purple-500/20 dark:to-blue-500/20;
+  }
+  
+  .gradient-border {
+    @apply border border-transparent bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-border;
+  }
+}
+
+/* New animations */
+@keyframes text-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(10px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-10px) scale(1.2);
+  }
+  100% {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 3s linear infinite;
+}
+
+/* Enhanced hover effects for entire page */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* Custom cursor style for the whole app */
+html {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="%239b87f5" fill-opacity="0.5"/></svg>') 8 8, auto;
+}

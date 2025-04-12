@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeBill - AI-Powered Bill Processing</title>
+    <meta name="description" content="Smart bill processing powered by AI. Save time, reduce errors, and gain insights into your expenses." />
+    <meta name="author" content="GeBill" />
+    <meta name="theme-color" content="#7E69AB" />
+    <meta name="csrf-token" content="" />
+
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="GeBill" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="GeBill - AI-Powered Bill Processing" />
+    <meta property="og:description" content="Smart bill processing powered by AI. Save time, reduce errors, and gain insights into your expenses." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@gebill" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(error => {
+              console.error('ServiceWorker registration failed:', error);
+            });
+        });
+      }
+
+      // Function to generate and set CSRF token
+      function setCsrfToken() {
+        const token = Array.from(crypto.getRandomValues(new Uint8Array(32)))
+          .map(byte => byte.toString(16).padStart(2, '0'))
+          .join('');
+        document.querySelector('meta[name="csrf-token"]').setAttribute('content', token);
+      }
+      setCsrfToken();
+    </script>
+  </body>
+</html>

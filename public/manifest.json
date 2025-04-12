@@ -1,0 +1,21 @@
+{
+  "name": "GeBill - Smart Bill Processing",
+  "short_name": "GeBill",
+  "description": "AI-powered bill processing and management",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7E69AB",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
